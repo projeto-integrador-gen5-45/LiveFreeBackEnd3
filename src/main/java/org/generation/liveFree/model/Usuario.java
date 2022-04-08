@@ -102,11 +102,13 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public List<Servico> getCategoria() {
+	
+
+	public List<Servico> getServico() {
 		return servico;
 	}
 
-	public void setCategoria(List<Servico> servico) {
+	public void setServico(List<Servico> servico) {
 		this.servico = servico;
 	}
 

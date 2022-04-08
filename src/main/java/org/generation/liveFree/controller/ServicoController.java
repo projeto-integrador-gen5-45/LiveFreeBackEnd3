@@ -24,17 +24,20 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/servicos")
-@CrossOrigin(value = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ServicoController {
 
 	@Autowired
 	private ServicoRepository repository;
 
+	
+	
 	@GetMapping
 	public ResponseEntity<List<Servico>> getAll(){
 		return ResponseEntity.ok(repository.findAll());
 	}
 
+	
 	@GetMapping("/{id}")
 	public ResponseEntity<Servico> getById(@PathVariable long id){
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp))

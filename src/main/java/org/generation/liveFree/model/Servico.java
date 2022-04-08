@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 //Indicar para o JDK que isso é uma tabela//
 
 @Entity
-@Table(name = "tb_servico")
+@Table(name ="tb_servico")
 public class Servico {
 
 	//Definir os campos dessa tabela//
@@ -92,6 +92,10 @@ public class Servico {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+
+	
+
+	
 
 		
 }
