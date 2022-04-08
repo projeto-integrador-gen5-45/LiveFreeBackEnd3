@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 //Indicar para o JDK que isso é uma tabela//
 
 @Entity
-@Table(name = "tb_postagem")
+@Table(name = "tb_servico")
 public class Servico {
 
 	//Definir os campos dessa tabela//
@@ -38,21 +38,19 @@ public class Servico {
 	private LocalDate data;
 
 	@ManyToOne
-	@JsonIgnoreProperties("postagem")
+	@JsonIgnoreProperties("servico")
 	private Categoria categoria;
 
 	@ManyToOne
-	@JsonIgnoreProperties("postagem")
+	@JsonIgnoreProperties("servico")
 	private Usuario usuario;
-
-	//Getters and Setters//
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public Long getId() {
 		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getTitulo() {
@@ -79,11 +77,11 @@ public class Servico {
 		this.data = data;
 	}
 
-	public Categoria getTema() {
+	public Categoria getCategoria() {
 		return categoria;
 	}
 
-	public void setTema(Categoria categoria) {
+	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
 
@@ -95,4 +93,5 @@ public class Servico {
 		this.usuario = usuario;
 	}
 
+		
 }
